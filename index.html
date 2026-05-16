@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>YomuDaily - Japanese Reading Practice</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <div class="petal-field" aria-hidden="true">
+        <span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span>
+    </div>
+
+    <main class="app-shell">
+        <section class="reader-stage" aria-labelledby="app-title">
+            <div class="brand-row">
+                <p class="kicker">日本語 reading garden</p>
+                <h1 id="app-title">YomuDaily</h1>
+                <p class="date-line" id="todayLabel"></p>
+            </div>
+
+            <div class="practice-layout">
+                <article class="reader-panel" id="readerPanel">
+                    <div class="reader-toolbar" aria-label="Reading controls">
+                        <div>
+                            <h2 id="readingTitle">Loading</h2>
+                        </div>
+                        <div class="toolbar-actions">
+                            <select id="levelSelect" class="icon-button" aria-label="Select JLPT Level">
+                                <option value="All">All Levels</option>
+                                <option value="N5">N5</option>
+                                <option value="N4">N4</option>
+                                <option value="N3">N3</option>
+                                <option value="N2">N2</option>
+                                <option value="N1">N1</option>
+                            </select>
+                            <button class="icon-button accent" id="prevButton" type="button">Previous</button>
+                            <button class="icon-button accent" id="nextButton" type="button">Next</button>
+                        </div>
+                    </div>
+
+                    <div class="japanese-text" id="readingText" lang="ja"></div>
+
+
+
+                    <div class="reader-actions">
+                        <button id="furiganaToggle" type="button" aria-pressed="true">ふりがな on</button>
+                        <button id="meaningToggle" type="button" aria-pressed="false">Meaning</button>
+                        <button id="speakButton" type="button" aria-label="Read aloud">🔊 Read Aloud</button>
+                    </div>
+                </article>
+
+                <aside class="study-panel" aria-label="Study notes">
+
+
+                    <section class="notes-section">
+                        <div class="section-heading">
+                            <span>Words</span>
+                            <strong id="wordCount">0 words</strong>
+                        </div>
+                        <div class="word-list" id="wordList"></div>
+                    </section>
+
+                    <section class="notes-section meaning-section" id="meaningSection" hidden>
+                        <div class="section-heading">
+                            <span>Meaning</span>
+                        </div>
+                        <p id="meaningText"></p>
+                    </section>
+
+                </aside>
+            </div>
+        </section>
+    </main>
+
+    <script src="n5-paragraphs.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
